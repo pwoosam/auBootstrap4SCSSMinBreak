@@ -8,5 +8,6 @@ export default function processCSS() {
   return gulp.src(project.cssProcessor.source)
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(project.paths.root))
     .pipe(build.bundle());
 };
